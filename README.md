@@ -26,7 +26,7 @@ LoadModule drain_module modules/mod_drain.so
 ## Usage
 
 ### Basic Usage
-After building and configuring `mod_drain`, you can trigger it by sending a request to the location you configuration the handler at.
+After building and configuring `mod_drain`, you can trigger it by sending a request to the location you configured the handler in.
 
 Below is a curl command that would work with the configuration in the section above.
 
