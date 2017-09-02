@@ -24,6 +24,8 @@ LoadModule drain_module modules/mod_drain.so
 ```
 
 ## Usage
+
+### Basic Usage
 After building and configuring `mod_drain`, you can trigger it by sending a request to the location you configuration the handler at.
 
 Below is a curl command that would work with the configuration in the section above.
@@ -40,4 +42,16 @@ You can also change the amount of memory drained by using the `amount` request p
 # curl http://localhost/drain?amount=100
 mod_drain
 100 MB drained
+```
+
+### Docker Usage
+
+A `Dockerfile` is provided in this repository so you can build a docker image to play with `mod_drain`. Run the following from inside the `mod_drain` source directory:
+
+```
+# docker built -t mod_drain .
+# docker run -d -p 8080:80 mod_drain
+# curl http://localhost:8080/drain
+mod_drain
+10 MB drained
 ```
